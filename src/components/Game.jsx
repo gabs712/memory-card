@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Cards from './Cards'
 import getPokemons from '../api/getPokemons'
 import ScoreBoard from './ScoreBoard'
+import randomizeArray from '../utils/randomizeArray'
 
 export default function Game() {
   const [pokemons, setPokemons] = useState([])
@@ -15,6 +16,8 @@ export default function Game() {
   }
 
   const handleClick = (name) => () => {
+    setPokemons(randomizeArray(pokemons))
+
     if (clicked.includes(name)) {
       setCliked([])
       return
