@@ -1,7 +1,10 @@
 import Container from './components/Container'
+import Game from './components/Game'
 
 export default function App() {
   return (
-    <Container className="bg-gradient-to-br from-green-500 to-green-400"></Container>
+    <Container className="bg-sky-600">
+      <Game />
+    </Container>
   )
 }

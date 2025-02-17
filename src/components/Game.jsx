@@ -1,9 +1,12 @@
 import { useState } from 'react'
 import Cards from './Cards'
 import getPokemons from '../api/getPokemons'
+import ScoreBoard from './ScoreBoard'
 
 export default function Game() {
   const [pokemons, setPokemons] = useState([])
+  const [clicked, setCliked] = useState([])
+  const [highest, setHighest] = useState(0)
 
   function updatePokemons() {
     getPokemons().then((newPokemons) => {
@@ -11,5 +14,24 @@ export default function Game() {
     })
   }
 
-  return <Cards {...{ pokemons, updatePokemons }} />
+  const handleClick = (name) => () => {
+    if (clicked.includes(name)) {
+      setCliked([])
+      return
+    }
+
+    const newClicked = [...clicked, name]
+    if (newClicked.length > highest) {
+      setHighest(newClicked.length)
+    }
+
+    setCliked(newClicked)
+  }
+
+  return (
+    <>
+      <ScoreBoard {...{ clicked, highest }} />
+      <Cards {...{ pokemons, updatePokemons, handleClick }} />
+    </>
+  )
 }
