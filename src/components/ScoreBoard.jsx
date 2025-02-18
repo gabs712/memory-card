@@ -4,8 +4,8 @@ export default function ScoreBoard({ clicked, highest }) {
   return (
     <div className="fixed left-0 right-0 top-0 mb-4 bg-black/60 p-2 px-7 text-white">
       <div className="flex justify-between">
-        <p>Score: {score}</p>
-        <p>Highest: {highest}</p>
+        <p aria-live="polite">Score: {score}</p>
+        <p aria-live="polite">Highest: {highest}</p>
       </div>
     </div>
   )
