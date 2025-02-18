@@ -3,7 +3,7 @@ import Game from './components/Game'
 
 export default function App() {
   return (
-    <Container className="bg-sky-600">
+    <Container>
       <Game />
     </Container>
   )
