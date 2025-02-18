@@ -1,6 +1,6 @@
 export default async function getPokemons() {
   const pokemonQuantity = 15
-  const maxIdRange = 300
+  const maxIdRange = 800
   const usedId = []
   const processedData = []
 
