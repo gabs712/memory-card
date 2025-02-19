@@ -19,20 +19,20 @@ export default function Cards({ pokemons, updatePokemons, handleClick }) {
               pokemon.name[0].toUpperCase() + pokemon.name.slice(1)
 
             return (
-              <div
+              <button
                 className="flex cursor-pointer flex-col overflow-hidden rounded-sm shadow-lg"
                 key={pokemon.name}
                 onClick={handleClick(pokemon.name)}
               >
-                <div className="flex h-full items-center justify-center overflow-hidden bg-slate-200 p-4 transition-colors duration-200 hover:bg-slate-50">
+                <div className="flex w-full h-full items-center justify-center overflow-hidden bg-slate-200 p-4 transition-colors duration-200 hover:bg-slate-50">
                   <img src={pokemon.sprite} alt="" />
                 </div>
-                <div className="mt-auto bg-slate-300 px-1 py-1">
+                <div className="mt-auto w-full bg-slate-300 px-1 py-1">
                   <p className="overflow-hidden text-ellipsis text-nowrap text-center text-xs font-bold text-teal-800">
                     {captalized}
                   </p>
                 </div>
-              </div>
+              </button>
             )
           })}
         </div>
